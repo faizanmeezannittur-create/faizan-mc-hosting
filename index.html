@@ -1,45 +1,92 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Faizan MC Hosting</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FAIZAN MC HOSTING</title>
 <style>
-body {
-  background: #160925;
-  color: white;
-  font-family: Arial;
-  text-align: center;
-  padding: 25px;
+*{box-sizing:border-box}
+body{
+ margin:0;background:#160925;color:white;
+ font-family:Arial;text-align:center
 }
-h1 { color: #c084fc; }
-.card {
-  background: #321653;
-  padding: 25px;
-  border-radius: 15px;
-  margin: 20px auto;
-  max-width: 400px;
+header{
+ padding:22px;background:#210d38;
+ display:flex;justify-content:space-between;
+ align-items:center;flex-wrap:wrap;gap:12px
 }
-button {
-  background: #9333ea;
-  color: white;
-  border: 0;
-  padding: 14px 25px;
-  border-radius: 10px;
-  font-size: 16px;
+.logo{font-size:21px;color:#d8a7ff;font-weight:bold}
+nav a{color:white;text-decoration:none;margin:8px}
+.hero{padding:65px 15px 40px}
+h1{font-size:38px;color:#d8a7ff}
+p{color:#d5c4e4;line-height:1.6}
+button{
+ background:#963ce0;color:white;border:0;
+ padding:14px 25px;border-radius:9px;
+ font-size:16px;font-weight:bold
+}
+.features{
+ display:grid;grid-template-columns:repeat(3,1fr);
+ gap:12px;padding:20px;max-width:850px;margin:auto
+}
+.card{
+ background:#321653;padding:22px;
+ border:1px solid #68418b;border-radius:14px
+}
+.card h3{color:#d8a7ff}
+footer{padding:30px;color:#c6a3df}
+@media(max-width:550px){
+ .features{grid-template-columns:1fr}
+ h1{font-size:30px}
 }
 </style>
 </head>
 <body>
-<h1>FAIZAN MC HOSTING</h1>
-<p>Your Minecraft. Your Rules.</p>
-<div class="card">
-<h2>Create Your Server</h2>
-<p>Java Edition | Lifesteal SMP</p>
-<button onclick="alert('Server creation will be available soon!')">
-Create Server
+
+<header>
+<div class="logo">⚡ FAIZAN MC HOSTING</div>
+<nav>
+<a href="#home">Home</a>
+<a href="#features">Features</a>
+<a href="#about">About</a>
+</nav>
+</header>
+
+<section class="hero" id="home">
+<h1>YOUR MINECRAFT.<br>YOUR RULES.</h1>
+<p>Welcome to FAIZAN MC HOSTING</p>
+<p>Create your own Minecraft world.<br>
+Play Survival, Lifesteal and SMP!</p>
+<button onclick="location.href='#features'">
+GET STARTED
 </button>
+</section>
+
+<section class="features" id="features">
+<div class="card">
+<h3>🖥️ Server Hosting</h3>
+<p>Manage your Minecraft servers.</p>
 </div>
-<p>Free Minecraft Hosting</p>
+<div class="card">
+<h3>❤️ Lifesteal SMP</h3>
+<p>Enjoy your Lifesteal adventure.</p>
+</div>
+<div class="card">
+<h3>⚡ Paper Support</h3>
+<p>Build your Java server.</p>
+</div>
+</section>
+
+<section id="about">
+<h2 style="color:#d8a7ff">About Us</h2>
+<p>Your Minecraft. Your Rules.</p>
+</section>
+
+<footer>
+FAIZAN MC HOSTING © 2026
+</footer>
+
 </body>
 </html>
+
