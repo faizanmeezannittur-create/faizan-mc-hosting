@@ -187,3 +187,45 @@ function stopServer() {
 </script>
 
 </html>
+
+<section id="auth" style="background:#160925;color:white;padding:30px 15px;text-align:center;font-family:Arial;border-radius:16px;">
+  <h1 style="color:#d9a5ff;">💜 FAIZAN MC HOSTING</h1>
+  <p>Your Minecraft. Your Rules.</p>
+
+  <div style="max-width:380px;margin:auto;background:#321653;padding:22px;border-radius:15px;">
+    <h2 id="authTitle">Create Account</h2>
+
+    <input id="authUser" placeholder="Username"
+      style="width:90%;padding:13px;margin:8px;border-radius:8px;border:0;">
+
+    <input id="authEmail" type="email" placeholder="Email"
+      style="width:90%;padding:13px;margin:8px;border-radius:8px;border:0;">
+
+    <input id="authPassword" type="password" placeholder="Password"
+      style="width:90%;padding:13px;margin:8px;border-radius:8px;border:0;">
+
+    <button onclick="demoRegister()"
+      style="padding:13px;background:#a64bea;color:white;border:0;border-radius:8px;width:95%;margin-top:12px;">
+      REGISTER
+    </button>
+
+    <p id="authMessage">Demo interface only</p>
+  </div>
+</section>
+
+<script>
+function demoRegister() {
+  const user = document.getElementById("authUser").value.trim();
+  const email = document.getElementById("authEmail").value.trim();
+  const password = document.getElementById("authPassword").value;
+
+  if (!user || !email || !password) {
+    document.getElementById("authMessage").innerText =
+      "Please fill all fields.";
+    return;
+  }
+
+  document.getElementById("authMessage").innerText =
+    "Demo only! Real account registration needs a secure backend.";
+}
+</script>
