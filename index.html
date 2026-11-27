@@ -90,3 +90,99 @@ FAIZAN MC HOSTING © 2026
 </body>
 </html>
 
+<section id="dashboard" style="padding:30px 15px;background:#160925;color:white;text-align:center;font-family:Arial;">
+  <h1 style="color:#d8a7ff;">💜 FAIZAN MC HOSTING</h1>
+  <h2>My Server Dashboard</h2>
+  <p>Create and manage your Minecraft server</p>
+
+  <div style="background:#321653;padding:22px;border-radius:15px;max-width:500px;margin:20px auto;">
+    <h3>🖥️ Create Your Server</h3>
+
+    <input id="serverName" placeholder="Enter server name"
+      style="padding:13px;width:90%;border-radius:8px;border:0;">
+
+    <br><br>
+
+    <select id="software" style="padding:12px;width:95%;border-radius:8px;">
+      <option>Paper</option>
+      <option>Vanilla</option>
+    </select>
+
+    <br><br>
+
+    <select id="serverType" style="padding:12px;width:95%;border-radius:8px;">
+      <option>Survival</option>
+      <option>Lifesteal SMP</option>
+      <option>SMP</option>
+    </select>
+
+    <br><br>
+
+    <button onclick="createServer()"
+      style="padding:13px 25px;background:#963ce0;color:white;border:0;border-radius:8px;font-weight:bold;">
+      CREATE SERVER
+    </button>
+  </div>
+
+  <div id="serverBox" style="background:#321653;padding:20px;border-radius:15px;max-width:500px;margin:20px auto;">
+    <h3>Your Server</h3>
+    <p id="serverInfo">No server created yet.</p>
+    <p id="serverStatus">Status: Not created</p>
+
+    <button onclick="startServer()" style="background:#28a745;color:white;padding:12px;border:0;border-radius:8px;">
+      START
+    </button>
+
+    <button onclick="stopServer()" style="background:#dc3545;color:white;padding:12px;border:0;border-radius:8px;">
+      STOP
+    </button>
+  </div>
+
+  <p style="color:#d8a7ff;">Your Minecraft. Your Rules.</p>
+</section>
+
+<script>
+let myServer = null;
+let running = false;
+
+function createServer() {
+  const name = document.getElementById("serverName").value.trim();
+  const software = document.getElementById("software").value;
+  const type = document.getElementById("serverType").value;
+
+  if (!name) {
+    alert("Please enter a server name!");
+    return;
+  }
+
+  myServer = {name, software, type};
+  running = false;
+
+  document.getElementById("serverInfo").innerHTML =
+    "Name: " + name + "<br>Software: " + software +
+    "<br>Type: " + type;
+
+  document.getElementById("serverStatus").innerText =
+    "Status: Created (Demo)";
+}
+
+function startServer() {
+  if (!myServer) {
+    alert("Create a server first!");
+    return;
+  }
+  running = true;
+  document.getElementById("serverStatus").innerText =
+    "Status: Started (Demo only)";
+}
+
+function stopServer() {
+  if (!myServer) {
+    alert("Create a server first!");
+    return;
+  }
+  running = false;
+  document.getElementById("serverStatus").innerText =
+    "Status: Stopped (Demo only)";
+}
+</script>
